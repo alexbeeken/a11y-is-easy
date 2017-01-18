@@ -1,8 +1,29 @@
 /*
-* --------------------------------------------------------------------------
-* Foundation
-* --------------------------------------------------------------------------
-*/
+ * -----------------------------------------------------------------------------
+ * Foundation
+ * -----------------------------------------------------------------------------
+ */
+
+/*
+ * Don't use Normalize.css or CSS Reset libraries; they are overkill.
+ * Refraining from using these helps minimize the need to excessively
+ * (re)define properties, resulting in leaner and cleaner code that is more
+ * manageable. Repeatedly redefining selectors (especially redefining unused
+ * elements needlessly) is inefficient and unnecessarily taxing on the
+ * browser.
+ *
+ * Lazy CSS displaces burden on the user's experience under the guise easing
+ * development. That is selfish. Stop being lazy and selfish, y'all.
+ *
+ * Jayden Seric has some thoughts on the matter as well that I mostly agree
+ * with.
+ * http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation
+ *
+ * Do, however, make your life easier by using Autoprefixer.
+ * https://github.com/postcss/autoprefixer
+ *
+ * For what it's worth, I didn't use Autoprefixer on this stylesheet. YMMV
+ */
 
 *::before, *::after, * {
   /*
@@ -56,10 +77,10 @@ html {
 }
 
 /*
-* --------------------------------------------------------------------------
-* Slide Styles
-* --------------------------------------------------------------------------
-*/
+ * -----------------------------------------------------------------------------
+ * Slide Styles
+ * -----------------------------------------------------------------------------
+ */
 
 html {
   background: #333;
@@ -70,6 +91,9 @@ html {
   text-align: center;
 }
 
+/*
+ Sections
+ */
 header,
 section {
   display: flex;
@@ -77,14 +101,6 @@ section {
   justify-content: center;
   height: 100vh;
   padding: 1em;
-}
-
-abbr {
-  cursor: help;
-}
-
-hr {
-  display: none;
 }
 
 h1,
@@ -118,6 +134,9 @@ section h3:only-child {
   border: 0;
 }
 
+/*
+ Grouping
+ */
 p,
 ul {
   width: 70vw;
@@ -135,12 +154,19 @@ ol {
   text-align: left;
 }
 
+hr {
+  display: none;
+}
+
+/*
+ Text-level
+ */
 a {
   color: MediumAquaMarine;
 }
 
-small {
-  bottom: 0;
+em {
+  margin-right: .5rem;
 }
 
 strong {
@@ -148,8 +174,12 @@ strong {
   border-bottom: 1px solid #444;
 }
 
-em {
-  margin-right: .5rem;
+small {
+  bottom: 0;
+}
+
+abbr {
+  cursor: help;
 }
 
 sup {
