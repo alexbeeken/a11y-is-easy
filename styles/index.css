@@ -43,20 +43,13 @@ html {
   font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
   font-kerning: normal;
   /*
-   Chrome and Opera do not support the `auto` value for hyphens:. Chrome does
-   support `none`, however.
+   Chrome and Opera do not support the `auto` value for hyphens (except for
+   macOS). Chrome does support `none`, however.
    http://caniuse.com/#feat=css-hyphens
    */
   hyphens: auto;
   /*
-   Render fonts consistently. Without these, fonts flicker in Safari and links
-   get bolder on :hover in Chrome. Need to explore this issue more. Mozilla
-   looks best left alone but shooting for consistency for the time being; this
-   might eventually be a Webkit-specific "fix" if I decide it's okay for
-   Mozilla to render differently.
-
-   NB -- this appears to specifically affect Calluna. Futura doesn't suffer
-   from flickering in Safari after page load. More investigation needed.
+   Render fonts consistently.
    */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
