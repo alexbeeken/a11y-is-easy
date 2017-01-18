@@ -5,7 +5,14 @@
 */
 
 *::before, *::after, * {
+  /*
+   Apply a more natural box layout model to all elements. This can be
+   overridden by setting a specific element's `box-sizing:` to `content-box`.
+   */
   box-sizing: border-box;
+  /*
+   Establish custom easing function.
+   */
   animation-timing-function: cubic-bezier( .4, 0, .2, 1 );
   transition-timing-function: cubic-bezier( .4, 0, .2, 1 );
 }
@@ -15,16 +22,42 @@ html, body {
 }
 
 html {
+  /*
+   Prevent fonts from automatically zooming in mobile browsers. A value of
+   `100%` still allows for pinch-zoom input. (`none` disables pinch-zoom.)
+   */
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  /*
+   Basic typography sets the foundation for vertical rhythm and relative size
+   between elements.
+   */
   font-size: 20px;
   line-height: 1.5;
   vertical-align: baseline;
+  /*
+   Ligagures and kerning are ALL over the place.
+   */
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures discretionary-ligatures;
   font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
   font-kerning: normal;
+  /*
+   Chrome and Opera do not support the `auto` value for hyphens:. Chrome does
+   support `none`, however.
+   http://caniuse.com/#feat=css-hyphens
+   */
   hyphens: auto;
+  /*
+   Render fonts consistently. Without these, fonts flicker in Safari and links
+   get bolder on :hover in Chrome. Need to explore this issue more. Mozilla
+   looks best left alone but shooting for consistency for the time being; this
+   might eventually be a Webkit-specific "fix" if I decide it's okay for
+   Mozilla to render differently.
+
+   NB -- this appears to specifically affect Calluna. Futura doesn't suffer
+   from flickering in Safari after page load. More investigation needed.
+   */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -52,8 +85,6 @@ section {
   height: 100vh;
   padding: 1em;
 }
-
-
 
 abbr {
   cursor: help;
@@ -113,6 +144,10 @@ ol {
 
 a {
   color: MediumAquaMarine;
+}
+
+small {
+  bottom: 0;
 }
 
 strong {
