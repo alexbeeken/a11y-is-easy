@@ -61,7 +61,7 @@ html {
    */
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures discretionary-ligatures;
-  font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'dlig' 1;
   font-kerning: normal;
   /*
    Chrome and Opera do not support the `auto` value for hyphens (except for
@@ -106,7 +106,7 @@ section {
 h1,
 h2,
 h3 {
-  font-family: "Impact";
+  font-family: 'Impact';
   text-transform: uppercase;
 }
 
